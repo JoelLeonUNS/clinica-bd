@@ -14,7 +14,7 @@ CREATE TABLE pacientes (
   fecha_nacimiento DATE NOT NULL,
   edad INT GENERATED ALWAYS AS (TIMESTAMPDIFF(YEAR, fecha_nacimiento, CURDATE())) STORED,
   telefonos JSON NOT NULL,
-  FOREIGN KEY datos_basicos_id REFERENCES datos_basicos(id)
+  FOREIGN KEY (datos_basicos_id) REFERENCES datos_basicos(id)
   );
 
 INSERT INTO datos_basicos ( enfermedades_previas, observaciones ) VALUES
